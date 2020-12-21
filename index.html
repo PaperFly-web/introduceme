@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-cn   ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09818106</title>
+    <link rel="stylesheet" href="css/el.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/pc.css">
+    <!-- media="screen and (min-width:768px)" -->
+    <!-- <link rel="stylesheet" href="css/ipad.css" media="screen and (min-width:768px) and (max-width:992px)"> -->
+
+    <!-- <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width:768px)"> -->
+
+</head>
+<style>
+    @import 'css/display.css';
+</style>
+
+
+<body>
+    <div id="app">
+        <el-backtop :bottom="100">
+            <el-button icon="el-icon-arrow-up" circle></el-button>
+
+        </el-backtop>
+        <!-- <div id="pc" class="hidden-sm-only hidden-sm-and-down"> -->
+        <div id="pc">
+            <div id="mobile-nav" v-show="screenWidth<768">
+                <!-- <div>
+                    <el-button @click="scrollTo('PaperFly')">
+                        <el-link :underline="false">
+                            <h3>
+                                HOME
+                            </h3>
+                        </el-link>
+                    </el-button>
+
+                </div> -->
+                <div>
+                    <el-button @click="scrollTo('PaperFly')">
+                        <el-link :underline="false">
+                            <h3>
+                                About me
+                            </h3>
+                        </el-link>
+                    </el-button>
+
+                </div>
+                <div>
+                    <el-button @click="scrollTo('3D')">
+                        <el-link :underline="false">
+                            <h3>
+                                3D
+                            </h3>
+                        </el-link>
+                    </el-button>
+
+                </div>
+                <div>
+                    <el-button @click="scrollTo('UI')">
+                        <el-link :underline="false">
+                            <h3>
+                                UI
+                            </h3>
+                        </el-link>
+                    </el-button>
+
+                </div>
+                <div>
+                    <el-button @click="scrollTo('Photos')">
+                        <el-link :underline="false">
+                            <h3>
+                                Photos
+                            </h3>
+                        </el-link>
+                    </el-button>
+
+                </div>
+                <div>
+                    <el-button @click="scrollTo('Projects')">
+                        <el-link :underline="false">
+                            <h3>Projects</h3>
+                        </el-link>
+                    </el-button>
+
+                </div>
+                <div>
+                    <el-button @click="scrollTo('Skills')">
+                        <el-link :underline="false">
+                            <h3>Skills</h3>
+                        </el-link>
+                    </el-button>
+
+                </div>
+
+
+
+
+            </div>
+            <!-- class="hidden-xs-only" -->
+            <!-- <el-button v-show="screenWidth<=950" @click="drawer = true" type="primary" style="height: 5%;position: absolute;z-index: 100; ">
+                点我打开
+            </el-button> -->
+            <i v-show="screenWidth<=950&&screenWidth>767" type="info" @click="drawer = true" class="el-icon-s-unfold"></i>
+            <el-drawer size="20" :with-header="false" :visible.sync="drawer" direction="ltr" :before-close="handleClose">
+                <!-- <h1>aaa</h1> -->
+                <nav>
+                    <el-image style="width: 8rem;" src="image/logo.png" fit="fill"></el-image>
+                    <el-link :underline="false" @click="scrollTo('PaperFly')">
+                        <h3>
+                            HOME
+                        </h3>
+                    </el-link>
+                    <el-link :underline="false" @click="scrollTo('About')">
+                        <h3>
+                            About me
+                        </h3>
+                    </el-link>
+                    <el-link :underline="false" @click="scrollTo('3D')">
+                        <h3>
+                            3D
+                        </h3>
+                    </el-link>
+                    <el-link :underline="false" @click="scrollTo('Photos')">
+                        <h3>
+                            Photos
+                        </h3>
+                    </el-link>
+                    <el-link :underline="false" @click="scrollTo('UI')">
+                        <h3>
+                            UI
+                        </h3>
+                    </el-link>
+                    <el-link :underline="false" @click="scrollTo('Projects')">
+                        <!-- href="#Projects" -->
+                        <h3>Projects</h3>
+                    </el-link>
+                    <el-link :underline="false" @click="scrollTo('Skills')">
+                        <!-- href="#Projects" -->
+                        <h3>Skills</h3>
+                    </el-link>
+                    <!-- <div class="nav-Copyright">
+                        <p>
+                            Copyright © 2020.092818106 All rights reserved.
+                        </p>
+                        <p>
+
+                        </p>
+                    </div> -->
+
+                </nav>
+            </el-drawer>
+            <nav v-show="screenWidth>950">
+                <el-image style="width: 6rem;" src="image/logo.png" fit="fill"></el-image>
+                <el-link :underline="false" @click="scrollTo('PaperFly')">
+                    <h3>
+                        HOME
+                    </h3>
+                </el-link>
+                <el-link :underline="false" @click="scrollTo('section-2-content')">
+                    <h3>
+                        About me
+                    </h3>
+                </el-link>
+                <el-link :underline="false" @click="scrollTo('3D')">
+                    <h3>
+                        3D
+                    </h3>
+                </el-link>
+                <el-link :underline="false" @click="scrollTo('Photos')">
+                    <h3>
+                        Photos
+                    </h3>
+                </el-link>
+                <el-link :underline="false" @click="scrollTo('UI')">
+                    <h3>
+                        UI
+                    </h3>
+                </el-link>
+                <el-link :underline="false" @click="scrollTo('Projects')">
+                    <h3>Projects</h3>
+                </el-link>
+                <el-link :underline="false" @click="scrollTo('Skills')">
+                    <h3>Skills</h3>
+                </el-link>
+                <div class="nav-Copyright">
+
+                    <p>
+                        联系我：QQ1430978392
+                        <br><br> Copyright © 2020.092818106 All rights reserved.
+                    </p>
+
+                </div>
+
+            </nav>
+
+
+            <article id="PaperFly">
+
+                <section v-show="screenWidth>767">
+                    <div id="section-1-content">
+                        <div id="section-1-main">
+                            <h1>PaperFly</h1>
+                            <h3>
+                                A programmer who likes photography
+                            </h3>
+                            <el-button plain><a href="https://github.com/PaperFly-web" target="_blank">GITHUP</a>
+                            </el-button>
+                            <el-button plain><a href="https://gitee.com/paperfly" target="_blank">GITEE</a></el-button>
+                            <el-button plain><a href="https://space.bilibili.com/391912695" target="_blank">BILIBILI</a>
+                            </el-button>
+                        </div>
+                    </div>
+
+                </section>
+                <section id="About">
+
+                    <div id="section-2-content" v-show="section.about">
+                        <div class="section-2-title section-title">
+                            <h1>
+
+                                <a></a>About me
+                            </h1>
+
+                        </div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h1>姓名：<span>胡敬超</span></h1>
+                                    </td>
+                                    <td>
+                                        <h1>性别：<span>男</span></h1>
+                                    </td>
+                                    <td>
+                                        <h1>籍贯：<span>河南省潢川县</span></h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h1>本科院校：<span>常熟理工学院</span></h1>
+                                    </td>
+
+                                    <td colspan="2">
+                                        <h1>本科专业：<span>数字媒体技术（嵌入式培养）</span></h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <h1>政治面貌：<span>中共预备党员</span></h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <!-- <marquee loop="-1" direction="left" behavior="alternate" scrollamount="8">
+                                            <h1 style="font-size: 1rem;">大学期间获得的奖项</h1>
+                                        </marquee> -->
+                                        <h1 style="font-size: 1rem;text-align: center;margin-top: 8%;">大学期间获得的奖项</h1>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3">
+                                        <h1>
+                                            2018年：<span>二等奖学金,我来说说心理学演讲比赛二等奖</span>
+                                        </h1>
+
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+
+                                    <td colspan="3">
+                                        <h1>
+                                            2019年：<span>3月二等奖学金,11月二等奖学金,国家励志奖学金,计算机科学与工程学院运动会4*100第一名，“醉美校园摄影大赛”二等奖，江苏省计算机设计大赛优胜奖</span>
+                                        </h1>
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+
+                                    <td colspan="3">
+                                        <h1>2020年：<span>国家励志奖学金，二等奖学金</span> </h1>
+                                    </td>
+
+
+
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </section>
+
+                <section id="3D">
+
+
+                    <transition name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
+
+                        <div id="section-3-content" v-if="section._3d">
+                            <div class="section-3-title section-title">
+                                <h1>
+                                    <a></a>3Dworkes Show
+                                </h1>
+                            </div>
+                            <div id="section-3-main">
+                                <video src="sources/works/video/3D.mp4" poster="sources/works/video/1.png" width="750rem" preload controls></video>
+                            </div>
+                        </div>
+                    </transition>
+
+                </section>
+                <section id="Photos">
+
+                    <div id="section-4-content" v-show="section.photos">
+                        <div class="section-4-title section-title">
+                            <h1>
+                                Photos
+                            </h1>
+                        </div>
+                        <div id="section-4-main">
+
+                            <span v-for="(item,index) in mobilePhotos" name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
+                                <el-card :body-style="{ padding: '0px' }">
+                                    <el-image :preview-src-list="item.childreUrl" :id="'section-4-image-'+index"
+                                        v-loading="loading('section-4-image-'+index)"
+                                        @load="loadImage('section-4-image-'+index,false)" :lazy="true"
+                                        :src="item.titleUrl" class="image">
+                                        <div slot="placeholder" class="image-slot">
+                                            <span class="dot">
+                                                <el-image src="image/loading.png" fit="fill">
+
+                                                </el-image>
+                                            </span>
+                        </div>
+                        </el-image>
+                        <div>
+                            <h3>{{item.title}}</h3>
+                        </div>
+                        </el-card>
+                        </span>
+                    </div>
+        </div>
+
+        </section>
+        <section id="UI">
+
+            <div id="section-5-content" v-show="section.ui">
+                <div class="section-5-title section-title">
+                    <h1>
+                        <a></a>UI
+                    </h1>
+                </div>
+                <div id="section-5-main">
+                    <div class="section-5-main-img" v-for="(item,index) in UIimages">
+                        <el-image :id="'section-5-image-'+index" v-loading="loading('section-5-image-'+index)" @load="loadImage('section-5-image-'+index,false)" :lazy="true" v-for="val in item.url" style="width: 10rem;" :src="val" fit="fill">
+                            <div slot="placeholder" class="image-slot">
+                                <span class="dot">
+                                            <el-image src="image/loading.png" fit="fill">
+
+                                            </el-image>
+                                        </span>
+                            </div>
+                        </el-image>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section id="Projects">
+
+            <div id="section-6-content" v-show="section.projects">
+                <div class="section-6-title section-title">
+                    <h1>
+                        <a></a>Projects
+                    </h1>
+                </div>
+                <div id="section-6-main">
+                    <el-card :body-style="{ padding: '0px' }" v-for="(item,index) in Projects">
+                        <a :href="item.githup" target="_blank">
+                            <el-image :id="'section-6-image-'+index" v-loading="loading('section-6-image-'+index)" @load="loadImage('section-6-image-'+index,false)" :lazy="true" :src="item.url" class="image">
+                                <div slot="placeholder" class="image-slot">
+                                    <span class="dot">
+                                                <el-image src="image/loading.png" fit="fill">
+
+                                                </el-image>
+                                            </span>
+                                </div>
+                            </el-image>
+                        </a>
+                        <div>
+                            <h3>{{item.title}}</h3>
+                            <div id="section-6-desc">
+                                <span>
+                                            {{item.desc}}
+                                        </span>
+                            </div>
+
+                        </div>
+                    </el-card>
+
+                </div>
+            </div>
+        </section>
+        <section id="Skills">
+
+            <div id="section-7-content" v-show="section.skills">
+
+                <div class="section-7-title section-title">
+                    <h1>
+                        <a></a>Skills
+                    </h1>
+                </div>
+                <div id="section-7-main">
+                    <div class="section-7-skillsShow">
+                        <el-progress color="#0278ae" type="circle" :percentage="skills.java.newData">
+                        </el-progress>
+                        <div>
+                            <h3>JAVA</h3>
+                        </div>
+                    </div>
+                    <div class="section-7-skillsShow">
+                        <el-progress color="#0278ae" type="circle" :percentage="skills.c.newData"></el-progress>
+                        <div>
+                            <h3>C语言</h3>
+                        </div>
+                    </div>
+                    <div class="section-7-skillsShow">
+                        <el-progress color="#0278ae" type="circle" :percentage="skills.web.newData">
+                        </el-progress>
+                        <div>
+                            <h3>Web</h3>
+                        </div>
+                    </div>
+                    <div class="section-7-skillsShow">
+                        <el-progress color="#0278ae" type="circle" :percentage="skills.mysql.newData">
+                        </el-progress>
+                        <div>
+                            <h3>Mysql</h3>
+                        </div>
+                    </div>
+                    <div class="section-7-skillsShow">
+                        <el-progress color="#0278ae" type="circle" :percentage="skills.ps.newData">
+                        </el-progress>
+                        <div>
+                            <h3>PS</h3>
+                        </div>
+                    </div>
+                    <div class="section-7-skillsShow">
+                        <el-progress color="#0278ae" type="circle" :percentage="skills.pr.newData">
+                        </el-progress>
+                        <div>
+                            <h3>Pr</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer v-show="screenWidth<950">
+            <div>
+                联系我：QQ1430978392
+            </div>
+            <div>
+                Copyright © 2020.092818106 All rights reserved.
+            </div>
+        </footer>
+        </article>
+    </div>
+
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/el.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            // loading: true,
+            drawer: false,
+            screenWidth: document.body.clientWidth, //屏幕尺寸
+            mobilePhotos: [{
+                title: "家乡的思恋",
+                titleUrl: "sources/works/image/home/1.jpg",
+                childreUrl: [
+                    "sources/works/image/home/1.jpg",
+                    "sources/works/image/home/2.jpg",
+                    "sources/works/image/home/3.jpg",
+                    "sources/works/image/home/4.jpg"
+                ]
+            }, {
+                title: "校园的温暖",
+                titleUrl: "sources/works/image/school/1.jpg",
+                childreUrl: [
+                    "sources/works/image/school/1.jpg",
+                    "sources/works/image/school/2.jpg",
+                    "sources/works/image/school/3.jpg",
+                    "sources/works/image/school/4.jpg",
+                    "sources/works/image/school/5.jpg",
+                    "sources/works/image/school/6.jpg",
+                    "sources/works/image/school/7.jpg"
+                ]
+            }, {
+                title: "旅游的快乐",
+                titleUrl: "sources/works/image/travel/1.jpg",
+                childreUrl: [
+                    "sources/works/image/travel/1.jpg",
+                    "sources/works/image/travel/2.jpg",
+                    "sources/works/image/travel/3.jpg",
+                    "sources/works/image/travel/4.jpg",
+                    "sources/works/image/travel/5.jpg",
+                    "sources/works/image/travel/6.jpg",
+                    "sources/works/image/travel/7.jpg",
+                    "sources/works/image/travel/8.jpg",
+                    "sources/works/image/travel/9.jpg"
+                ]
+            }, {
+                title: "远方的幻想",
+                titleUrl: "sources/works/image/far/1.jpg",
+                childreUrl: [
+                    "sources/works/image/far/1.jpg",
+                    "sources/works/image/far/2.jpg",
+                    "sources/works/image/far/3.jpg",
+                    "sources/works/image/far/4.jpg",
+                ]
+            }],
+
+            Projects: [{
+                title: "会议室预约系统",
+                url: "sources/works/java/1.png",
+                githup: "https://github.com/PaperFly-web/finally_system",
+                desc: "这个系统，主要功能是实现会议室的预约。在这个系统中，我主要是负责后端的开发和维护，第一次是用前后端分离的方式，遇到过很多坑。总结一句话，还是老老实实的把知识学踏实，能耐下心来去看文档看源码，才能更好提高自己"
+            }, {
+                title: "实验室管理系统",
+                url: "sources/works/java/2.png",
+                githup: "https://github.com/PaperFly-web/ourweb",
+                desc: "这个系统，主要实现每天签到，上传自己学习的进度。也是自己的第一个“有模有样”的系统。"
+            }, {
+                title: "漏网之鱼电影网站",
+                url: "sources/works/java/3.png",
+                githup: "https://github.com/PaperFly-web/movie_web",
+                desc: "这个系统，主要是实现电影的播放，管理等。是自己暑假实训的一个项目。我自己主要负责后端的编写，前端也负责一些。算是对自己学习的知识在项目中又一次实战一下吧。"
+            }],
+            UIimages: [{
+                    url: ["sources/works/UI/flat/flat1.png",
+                        "sources/works/UI/flat/flat2.png",
+                        "sources/works/UI/flat/flat3.png",
+                        "sources/works/UI/flat/flat4.png"
+                    ]
+                }, {
+                    url: ["sources/works/UI/app/1.jpg",
+                        "sources/works/UI/app/2.jpg",
+                        "sources/works/UI/app/3.jpg",
+                        "sources/works/UI/app/4.jpg"
+                    ]
+                }
+
+
+            ],
+            loadImageIsTrue: [],
+            skills: {
+                java: {
+                    oldData: 0,
+                    newData: 80
+                },
+                c: {
+                    oldData: 0,
+                    newData: 70
+                },
+                web: {
+                    oldData: 0,
+                    newData: 70
+                },
+                mysql: {
+                    oldData: 0,
+                    newData: 80
+                },
+                ps: {
+                    oldData: 0,
+                    newData: 70
+                },
+                pr: {
+                    oldData: 0,
+                    newData: 70
+                }
+            },
+            section: {
+                about: true,
+                _3d: true,
+                photos: true,
+                ui: true,
+                skills: true,
+                projects: true,
+            }
+        },
+        methods: {
+            handleClose(done) {
+                done();
+            },
+            loadImage(tag, flag) {
+                this.loadImageIsTrue.push({
+                    tag: tag,
+                    flag: flag,
+                    // mouseIn: 'fill'
+                })
+            },
+            scrollTo(tag) {
+                var newRuler = document.getElementById(tag)
+                    // console.log(newRuler.offsetTop, 'top')
+
+                window.scrollTo({
+                    top: newRuler.offsetTop,
+                    behavior: "smooth"
+                });
+
+                // loadImage() {
+                //     alert(444)
+                // }
+
+            },
+            format(data) {
+                return data;
+            },
+
+        },
+        mounted() {
+            const that = this
+            window.onresize = () => {
+                return (() => {
+                    window.screenWidth = document.body.clientWidth
+                    that.screenWidth = window.screenWidth
+                        // console.log("屏幕大小", window.screenWidth)
+                })()
+            }
+        },
+        computed: {
+            loading() {
+                return function(tag) {
+                    // console.log("加载的元素", tag)
+                    for (i = 0; i < this.loadImageIsTrue.length; i++) {
+                        if (this.loadImageIsTrue[i].tag == tag) {
+                            return this.loadImageIsTrue[i].flag;
+                        }
+                    }
+                    return true;
+                }
+            },
+            percentage() {
+                return function(oldData, newData) {
+                    setTimeout(1000)
+                }
+            }
+        }
+
+
+    })
+</script>
+
+</html>

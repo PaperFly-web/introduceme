@@ -1,0 +1,589 @@
+#pc {
+    /* display: flex; */
+}
+
+.el-icon-s-unfold {
+    float: right;
+    /* margin-right: 1rem;
+    margin-top: 1rem; */
+    opacity: 0.8;
+    font-size: 2.5rem;
+    color: #0278ae;
+    position: fixed;
+    z-index: 100;
+}
+
+.section-title {
+    font-size: 2rem;
+}
+
+
+/* 手机端导航栏 */
+
+#mobile-nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 2%;
+    background-color: #0278ae;
+}
+
+#mobile-nav .el-link--inner {
+    color: whitesmoke;
+    font-size: 0.5rem;
+}
+
+#mobile-nav div {
+    margin: 1%;
+}
+
+#mobile-nav button {
+    width: 250px;
+    color: whitesmoke;
+    background-color: rgb(64, 138, 180, 0);
+}
+
+#mobile-nav a {
+    width: 200px;
+    height: 1rem;
+}
+
+#mobile-nav button:hover {
+    background-color: #2da4cf;
+    border-color: #2da4cf;
+}
+
+#mobile-nav h3 {
+    margin: 0px;
+    padding: 0px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    background-color: #0278ae;
+    color: whitesmoke;
+    font-size: 0.5rem;
+}
+
+@media screen and (min-width:768px) and (max-width:950px) {
+    nav {
+        background-color: #0278ae;
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width:950px) {
+    nav {
+        background-color: #0278ae;
+        padding-top: 1rem;
+        width: 20%;
+        bottom: 0;
+        position: fixed;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 0;
+        bottom: 0;
+    }
+}
+
+
+/* 修改elementUi的样式 */
+
+.el-drawer {
+    width: 20%;
+}
+
+.el-drawer__body {
+    background-color: #0278ae;
+}
+
+nav .el-link--inner:hover {
+    color: #51adcf;
+}
+
+nav .el-link--inner {
+    color: #fffefe;
+}
+
+.nav-Copyright p {
+    color: #fffefe;
+    font-size: 0.7rem;
+    padding-top: 5rem;
+    padding-left: 1rem;
+}
+
+@media screen and (max-width:768px) {
+    article {
+        position: relative;
+        left: 0%;
+        overflow-x: hidden;
+    }
+}
+
+
+/* @media screen and (max-width:600px) {
+    article {
+        position: relative;
+        left: 0%;
+        overflow-x: hidden;
+    }
+} */
+
+@media screen and (min-width:768px) and (max-width:967px) {
+    article {
+        position: relative;
+        left: 0%;
+        overflow-x: hidden;
+    }
+}
+
+@media screen and (min-width:967px) {
+    article {
+        width: 80%;
+        position: absolute;
+        left: 20%;
+        overflow-x: hidden;
+    }
+}
+
+article section p {
+    margin: 0;
+    padding: 0;
+}
+
+article>section:nth-child(1) {
+    background-color: #51adcf;
+    background-image: url("image/bg.jpg");
+    height: 652px;
+    background-position: 50% -25px;
+}
+
+article>section:nth-child(5) {
+    background-color: #51adcf;
+}
+
+article>section:nth-child(2) {
+    background-color: white;
+}
+
+article>section:nth-child(3) {
+    background-color: #51adcf;
+}
+
+article>section:nth-child(7) {
+    background-color: #51adcf;
+}
+
+@media screen and (min-width:1300px) {
+    #section-1-content {
+        margin-left: 25%;
+        margin-right: 25%;
+        padding-left: 11%;
+        background-color: rgb(87, 178, 211, 0.5);
+        height: 652px;
+    }
+}
+
+@media only screen and (min-width:1100px) and (max-width:1300px) {
+    #section-1-content {
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-left: 22%;
+        background-color: rgb(87, 178, 211, 0.5);
+        height: 652px;
+    }
+}
+
+@media only screen and (min-width:992px) and (max-width:1100px) {
+    #section-1-content {
+        margin-left: 20%;
+        margin-right: 20%;
+        padding-left: 9%;
+        background-color: rgb(87, 178, 211, 0.5);
+        height: 652px;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:992px) {
+    #section-1-content {
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-left: 17.5%;
+        background-color: rgb(87, 178, 211, 0.5);
+        height: 652px;
+    }
+}
+
+#section-1-main {
+    position: absolute;
+    /* top: 5%; */
+    color: #ffffff;
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+}
+
+#section-1-main h1 {
+    font-size: 5rem;
+}
+
+#section-1-main button {
+    color: whitesmoke;
+    background-color: rgb(64, 138, 180, 0);
+}
+
+#section-1-main button:hover {
+    background-color: #2da4cf;
+    border-color: #2da4cf;
+}
+
+#section-1-main a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+
+/* 第二个内容部分，关于我自己 */
+
+#section-2-content {
+    padding-top: 1%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 5%;
+    /* display: flex;
+    justify-content: space-around; */
+}
+
+#section-2-content table {
+    border-spacing: 0;
+    border-collapse: unset;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+
+/* 适应火狐，把chrome的样式copy过来  start */
+
+html,
+* {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    user-select: text !important;
+}
+
+:-webkit-any(article,
+aside,
+nav,
+section) :-webkit-any(article,
+aside,
+nav,
+section) h1 {
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+:-webkit-any(article,
+aside,
+nav,
+section) h1 {
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+}
+
+:-webkit-any(article,
+aside,
+nav,
+section) :-webkit-any(article,
+aside,
+nav,
+section) h1 {
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+.section-title {
+    font-size: 2rem;
+}
+
+html,
+* {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    user-select: text !important;
+}
+
+:-webkit-any(article,
+aside,
+nav,
+section) :-webkit-any(article,
+aside,
+nav,
+section) h1 {
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+
+/* 适应火狐，把chrome的样式copy过来  end */
+
+.section-2-title {
+    font-size: 2rem;
+    text-align: center;
+    color: #51adcf;
+}
+
+#section-2-content tbody {
+    font-size: 0.3rem;
+    color: rgb(64, 138, 180);
+}
+
+#section-2-content span {
+    color: rgb(64, 138, 180, 0.5);
+    margin-top: 1%;
+}
+
+
+/* 第三个部分，3D作品展示 */
+
+#section-3-content {
+    padding-top: 1%;
+    padding-bottom: 5%;
+}
+
+#section-3-main {
+    text-align: center;
+}
+
+@media screen and (max-width:768px) {
+    #section-3-main video {
+        width: 700px;
+    }
+}
+
+@media screen and (max-width:720px) {
+    #section-3-main video {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width:550px) {
+    #section-3-main video {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    #section-3-main video {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width:300px) {
+    #section-3-main video {
+        width: 250px;
+    }
+}
+
+.section-3-title {
+    text-align: center;
+    color: whitesmoke;
+}
+
+
+/* 第四个部分，摄影作品展示 */
+
+.section-4-title {
+    text-align: center;
+    color: rgb(64, 138, 180);
+}
+
+@media screen and (min-width:1401px) {
+    #section-4-main {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        /* padding-top: 1%; */
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 5%;
+    }
+}
+
+@media screen and (max-width:1400px) {
+    #section-4-main {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        /* padding-top: 1%; */
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 5%;
+    }
+}
+
+#section-4-main .el-card {
+    /* margin: 0.5%; */
+}
+
+#section-4-main img {
+    width: 20rem;
+}
+
+
+/* #section-4-main img:hover {
+    width: 25rem;
+} */
+
+.el-card h3 {
+    padding-left: 2.5%;
+}
+
+
+/* 第五个部分UI设计 */
+
+.section-5-title {
+    text-align: center;
+    padding-top: 2%;
+    color: whitesmoke;
+}
+
+#section-5-content {
+    padding-top: 1%;
+    padding-bottom: 5%;
+}
+
+.section-5-main-img {
+    display: flex;
+    justify-content: space-around;
+}
+
+#section-5-main {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+#section-5-main .el-image {
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+
+/* 第6个部分，自己的项目 */
+
+.section-6-title {
+    text-align: center;
+    padding-top: 2%;
+    color: rgb(64, 138, 180);
+}
+
+#section-6-content {
+    padding-top: 1%;
+    padding-bottom: 5%;
+}
+
+#section-6-main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: stretch;
+    padding-top: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+}
+
+#section-6-main .el-card {
+    margin: 1%;
+    width: 30rem;
+}
+
+@media screen and (max-width:420px) {
+    #section-6-main img {
+        width: 25rem;
+    }
+}
+
+@media screen and (max-width:400px) {
+    #section-6-main img {
+        width: 21rem;
+    }
+}
+
+@media screen and (min-width:420px) and (max-width:567px) {
+    #section-6-main img {
+        width: 30rem;
+    }
+}
+
+@media screen and (min-width:567px) {
+    #section-6-main img {
+        width: 30rem;
+    }
+}
+
+#section-6-desc {
+    padding: 2.5%;
+    font-size: 0.8rem;
+    color: rgb(0, 0, 0, 0.5);
+}
+
+
+/* 第七个模块，我自己的技能 */
+
+.section-7-title {
+    text-align: center;
+    color: whitesmoke;
+    padding-top: 2%;
+}
+
+#section-7-main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: stretch;
+    padding-top: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 10%;
+}
+
+.section-7-skillsShow {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 1%;
+    color: whitesmoke;
+}
